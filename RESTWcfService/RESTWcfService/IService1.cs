@@ -15,7 +15,7 @@ namespace RESTWcfService
 
         [OperationContract]
         [WebGet(UriTemplate = "GetData/{value}", ResponseFormat = WebMessageFormat.Json)]
-        string GetData(int value);
+        string GetData(string value);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetDataUsingDataContract", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
