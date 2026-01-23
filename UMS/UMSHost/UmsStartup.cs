@@ -8,7 +8,6 @@ using System;
 
 namespace UMSHost
 {
-    //[assembly: OwinStartup(typeof(UMSHost.UmsStartup))]
     public class UmsStartup
     {
 

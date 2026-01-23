@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -40,7 +40,7 @@ namespace UMSHost
             get { return key; }
         }
 
-        public  static new string ToString()
+        public static string ToString()
         {
             return $"Audience={Audience}; Issuer={Issuer}; Key={Key};";
         }

@@ -3,7 +3,6 @@ using MAVI.ARCH.UMS.DAL_NS;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
@@ -24,9 +23,6 @@ namespace UMSHost
 
         public UmsHub()
         {
-            //..FileLog0.LogTextFile("", null, null, null)
-            //..FileLog0.LogTextFile("UmsHub.Constructor", string.Format("MachineName={0}",Environment.MachineName), null, null)
-
             // The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel
             // http://msdn.microsoft.com/en-us/library/bb408523.aspx
             // Validating X509 Certificates for SSL over HTTP in Exchange 2010
@@ -48,7 +44,6 @@ namespace UMSHost
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            //..FileLog0.LogTextFile("UmsHub.Dispose", string.Format("disposing={0}", disposing), null, null)
             // Check to see if Dispose has already been called.
             if (!disposed)
             {
@@ -595,39 +590,8 @@ namespace UMSHost
 
 
         #region For00FormOpen
-        // egyelore nincs szukseg a gyorsan egymas utan jovo hivasok kiszuresere
-        //// Szálbiztos tároló a kliensek utolsó üzenetének idejéről
-        //private static readonly ConcurrentDictionary<string, DateTime> _lastMessageTimes = new ConcurrentDictionary<string, DateTime>();
-
-
         public void For00FormOpen(string targetUser, string env, bool modal, string formName, string extraJsonData)
         {
-            // egyelore nincs szukseg a gyorsan egymas utan jovo hivasok kiszuresere
-            //try
-            //{
-            //    var connectionId = Context.ConnectionId;
-            //    var now = DateTime.UtcNow;
-
-            //    // Ellenőrizzük, mikor volt az utolsó hívás
-            //    if (_lastMessageTimes.TryGetValue(connectionId, out var lastTime))
-            //    {
-            //        // Ha kevesebb mint 100ms telt el, az gyanús (bombázás)
-            //        if ((now - lastTime).TotalMilliseconds < 100)
-            //        {
-            //            FileLog0.LogTextFile("UmsHub.For00FormOpen", $"Bombázás gyanú: {connectionId}", null, null);
-            //            // Csendben eldobjuk a kérést (hogy ne terheljük a szervert válasszal)
-            //            return;
-            //        }
-            //    }
-
-            //    // Időbélyeg frissítése
-            //    _lastMessageTimes[connectionId] = now;
-            //}
-            //catch (Exception ex)
-            //{
-            //    FileLog0.LogTextFileEx("UmsHub.For00FormOpen_UpdateLastMessageTime_Catch", FileLog0.MakeExceptionMessages(ex), null, null);
-            //}
-
             try
             {
                 FileLog0.LogTextFile("UmsHub.For00FormOpen - begin", $"ConnectionId={Context.ConnectionId} targetUser={targetUser} env={env} modal={modal} formName={formName} extraJsonData={extraJsonData}", null, null);
@@ -650,7 +614,7 @@ namespace UMSHost
                                 if (Environment.MachineName.Equals(ui.MachineName))
                                 {
                                     FileLog0.LogTextFile("UmsHub.For00FormOpen", $"Ezen a gepne kell lennie: {Environment.MachineName}", null, null);
-                                    dynamic clientProxy = Clients.Client(current_ui_id);
+                                    var clientProxy = Clients.Client(current_ui_id);
                                     if (clientProxy == null)
                                     {
                                         FileLog0.LogTextFile("UmsHub.For00FormOpen", $"clientProxy==null", null, null);
@@ -745,7 +709,7 @@ namespace UMSHost
                             if (Environment.MachineName.Equals(ui.MachineName))
                             {
                                 FileLog0.LogTextFile("UmsHub.For00FormOpenCL", $"Ezen a gepne kell lennie: {Environment.MachineName}", null, null);
-                                dynamic clientProxy = Clients.Client(current_ui_id);
+                                var clientProxy = Clients.Client(current_ui_id);
                                 if (clientProxy == null)
                                 {
                                     FileLog0.LogTextFile("UmsHub.For00FormOpenCL", $"clientProxy==null", null, null);
@@ -836,11 +800,6 @@ namespace UMSHost
                 ((Hub)this).Clients.Caller.UserId = Context.User.Identity.Name;
                 ((Hub)this).Clients.Caller.initialized();
 
-                //..string pass2UserID = getPass2UserID()
-                // parameters in Context
-                //..FileLog0.LogTextFile("UmsHub.OnConnected", string.Format("ConnectionId={0} Name={1} pass2UserID={2}", Context.ConnectionId, Context.User.Identity.Name, pass2UserID), null, null)
-
-
                 // tobb szalon, tobbszor is mehet ua ConnectionId-val
                 umsHelper.addUserInfo(Context.ConnectionId, null, null, null);
             }
@@ -860,13 +819,6 @@ namespace UMSHost
         // a HUbConnection.Stop()-ra azonnal bejon  : stopCalled==true   ertekkel
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {
-            //..string pass2UserID = getPass2UserID()
-
-            //string ws1 = Context.User.Identity.Name;      // nincs erteke
-            //string ws2 = Clients.Caller.UserId;           // nincs erteke
-
-
-            //..FileLog0.LogTextFile("UmsHub.OnDisconnected", string.Format("ConnectionId={0} pass2UserID={1}", Context.ConnectionId, pass2UserID), null, null)
             try
             {
                 umsHelper.delUserInfo(Context.ConnectionId);

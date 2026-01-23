@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin.Security.OAuth;
+using Microsoft.Owin;
+using Microsoft.Owin.Security.OAuth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,27 +19,12 @@ namespace UMSHost
 
         public override Task RequestToken(OAuthRequestTokenContext context)
         {
-            //var value = context.Request.Query.Get(_name);
-            //var value = context.Request.Headers[_name];
+            string value = context.Request.Query.Get(_name);
 
-            string value = string.Empty;
             if (string.IsNullOrEmpty(value))
             {
-                try
-                {
-                    value = context.Request.Query.Get(_name);
-                }
-                catch { }
+                value = context.Request.Headers.Get(_name);
             }
-            if (string.IsNullOrEmpty(value))
-            {
-                try
-                {
-                    value = context.Request.Headers[_name];
-                }
-                catch { }
-            }
-
 
             if (!string.IsNullOrEmpty(value))
             {
