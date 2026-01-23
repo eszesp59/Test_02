@@ -1,0 +1,14 @@
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\SignalRConsole.exe.config
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\SignalRConsole.exe
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\SignalRConsole.pdb
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\Newtonsoft.Json.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\Owin.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\bin\Debug\Newtonsoft.Json.xml
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\obj\Debug\SignalRConsole.csproj.AssemblyReference.cache
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\obj\Debug\SignalRConsole.csproj.CoreCompileInputs.cache
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\obj\Debug\SignalRC.85E1F57E.Up2Date
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\obj\Debug\SignalRConsole.exe
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\Test\SignalRConsole\obj\Debug\SignalRConsole.pdb

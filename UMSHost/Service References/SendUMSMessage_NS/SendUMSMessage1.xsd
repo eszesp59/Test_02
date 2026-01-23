@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/SendUMSMessage/SendUMSMessage.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Hello">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HelloResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Send">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendCLResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendToForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="formTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="publicMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="privateMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendToFormResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendToForm2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uiID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="formTypeID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="publicMessage" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="privateMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendToForm2Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAllResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="nameList" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pass2UserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="macAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClientResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KeszreJelentes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="macAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sound" type="xs:int" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KeszreJelentesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Vontat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="macAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sound" type="xs:int" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VontatResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PASS2Message">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="app" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PASS2MessageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PASS2MessageCL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="srcName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass2ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PASS2MessageCLResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="For00FormOpen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="targetUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="formName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraJsonData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="For00FormOpenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="For00FormOpenCL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="targetUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="env" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modal" type="xs:boolean" />
+        <xs:element minOccurs="0" name="formName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="extraJsonData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="For00FormOpenCLResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

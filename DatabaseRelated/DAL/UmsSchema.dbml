@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DV01_IFP" Class="UmsSchemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=tadsqlpas3.tad.mavinformatika.hu;Initial Catalog=DV01_IFP;Integrated Security=True" Provider="System.Data.SqlClient" />
+  <Function Name="UMS.usp_addUserInfo" Method="usp_addUserInfo">
+    <Parameter Name="connectionID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pass2UserID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="environmentName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="macAddress" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="UMS.usp_delUserInfo" Method="usp_delUserInfo">
+    <Parameter Name="connectionID" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="UMS.usp_getUserInfoByConnectionId" Method="usp_getUserInfoByConnectionId">
+    <Parameter Name="connectionId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="usp_getUserInfoByConnectionIdResult">
+      <Column Name="SignalRConnectionID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass2UserID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MACAddress" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="LastMessageSender" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ConnectionStarted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnvironmentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MachineName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastMessageTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastMessageText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="UMS.usp_getUserInfoByMacAddress" Method="usp_getUserInfoByMacAddress">
+    <Parameter Name="macAddress" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="usp_getUserInfoByMacAddressResult">
+      <Column Name="SignalRConnectionID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass2UserID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MACAddress" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="LastMessageSender" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ConnectionStarted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnvironmentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MachineName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastMessageTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastMessageText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="UMS.usp_getUserInfoByPass2UserId" Method="usp_getUserInfoByPass2UserId">
+    <Parameter Name="pass2UserID" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="usp_getUserInfoByPass2UserIdResult">
+      <Column Name="SignalRConnectionID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass2UserID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MACAddress" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="LastMessageSender" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ConnectionStarted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnvironmentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MachineName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastMessageTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastMessageText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="UMS.usp_setMessage" Method="usp_setMessage">
+    <Parameter Name="connectionID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sender" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="message" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="UMS.usp_setPass2Info" Method="usp_setPass2Info">
+    <Parameter Name="connectionID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pass2UserID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="environmentName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="machineName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="macAddress" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="UMS.usp_getPass2UserIdListByApp" Method="usp_getPass2UserIdListByApp">
+    <Parameter Name="app" Type="System.Char" DbType="Char(1)" />
+    <ElementType Name="usp_getPass2UserIdListByAppResult">
+      <Column Name="SignalRConnectionID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass2UserID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MachineName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MACAddress" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

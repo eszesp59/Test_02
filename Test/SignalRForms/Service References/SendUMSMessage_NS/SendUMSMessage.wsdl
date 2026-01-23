@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="SendUMSMessage" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="Secure_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/SendUMSMessage/SendUMSMessage.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/SendUMSMessage/SendUMSMessage.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/SendUMSMessage/SendUMSMessage.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISendUMSMessage_Hello_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hello" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_Hello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_Send_InputMessage">
+    <wsdl:part name="parameters" element="tns:Send" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_Send_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendCL_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendCL" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendCL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendCLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendToForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendToForm" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendToForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendToFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendToForm2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendToForm2" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendToForm2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendToForm2Response" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendAll" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendList" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SendList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SetClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetClient" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_SetClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_KeszreJelentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:KeszreJelentes" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_KeszreJelentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KeszreJelentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_Vontat_InputMessage">
+    <wsdl:part name="parameters" element="tns:Vontat" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_Vontat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VontatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_PASS2Message_InputMessage">
+    <wsdl:part name="parameters" element="tns:PASS2Message" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_PASS2Message_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PASS2MessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_PASS2MessageCL_InputMessage">
+    <wsdl:part name="parameters" element="tns:PASS2MessageCL" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_PASS2MessageCL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PASS2MessageCLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_For00FormOpen_InputMessage">
+    <wsdl:part name="parameters" element="tns:For00FormOpen" />
+  </wsdl:message>
+  <wsdl:message name="ISendUMSMessage_For00FormOpen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:For00FormOpenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISendUMSMessage">
+    <wsdl:operation name="Hello">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/Hello" message="tns:ISendUMSMessage_Hello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/HelloResponse" message="tns:ISendUMSMessage_Hello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Send">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/Send" message="tns:ISendUMSMessage_Send_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/SendResponse" message="tns:ISendUMSMessage_Send_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendCL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/SendCL" message="tns:ISendUMSMessage_SendCL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/SendCLResponse" message="tns:ISendUMSMessage_SendCL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendToForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/SendToForm" message="tns:ISendUMSMessage_SendToForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/SendToFormResponse" message="tns:ISendUMSMessage_SendToForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendToForm2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/SendToForm2" message="tns:ISendUMSMessage_SendToForm2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/SendToForm2Response" message="tns:ISendUMSMessage_SendToForm2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/SendAll" message="tns:ISendUMSMessage_SendAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/SendAllResponse" message="tns:ISendUMSMessage_SendAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/SendList" message="tns:ISendUMSMessage_SendList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/SendListResponse" message="tns:ISendUMSMessage_SendList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/SetClient" message="tns:ISendUMSMessage_SetClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/SetClientResponse" message="tns:ISendUMSMessage_SetClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KeszreJelentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/KeszreJelentes" message="tns:ISendUMSMessage_KeszreJelentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/KeszreJelentesResponse" message="tns:ISendUMSMessage_KeszreJelentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Vontat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/Vontat" message="tns:ISendUMSMessage_Vontat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/VontatResponse" message="tns:ISendUMSMessage_Vontat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PASS2Message">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/PASS2Message" message="tns:ISendUMSMessage_PASS2Message_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/PASS2MessageResponse" message="tns:ISendUMSMessage_PASS2Message_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PASS2MessageCL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/PASS2MessageCL" message="tns:ISendUMSMessage_PASS2MessageCL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/PASS2MessageCLResponse" message="tns:ISendUMSMessage_PASS2MessageCL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="For00FormOpen">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISendUMSMessage/For00FormOpen" message="tns:ISendUMSMessage_For00FormOpen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISendUMSMessage/For00FormOpenResponse" message="tns:ISendUMSMessage_For00FormOpen_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_ISendUMSMessage" type="tns:ISendUMSMessage">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Hello">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/Hello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Send">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/Send" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendCL">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendCL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToForm">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendToForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToForm2">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendToForm2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAll">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendList">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClient">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SetClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeszreJelentes">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/KeszreJelentes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vontat">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/Vontat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PASS2Message">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/PASS2Message" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PASS2MessageCL">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/PASS2MessageCL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="For00FormOpen">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/For00FormOpen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Secure" type="tns:ISendUMSMessage">
+    <wsp:PolicyReference URI="#Secure_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Hello">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/Hello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Send">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/Send" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendCL">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendCL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToForm">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendToForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToForm2">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendToForm2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAll">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendList">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SendList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClient">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/SetClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeszreJelentes">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/KeszreJelentes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Vontat">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/Vontat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PASS2Message">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/PASS2Message" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PASS2MessageCL">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/PASS2MessageCL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="For00FormOpen">
+      <soap12:operation soapAction="http://tempuri.org/ISendUMSMessage/For00FormOpen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SendUMSMessage">
+    <wsdl:port name="CustomBinding_ISendUMSMessage" binding="tns:CustomBinding_ISendUMSMessage">
+      <soap12:address location="http://localhost/SendUMSMessage/SendUMSMessage.svc" />
+    </wsdl:port>
+    <wsdl:port name="Secure" binding="tns:Secure">
+      <soap12:address location="https://ceszesp10-2x.tad.mavinformatika.hu/SendUMSMessage/SendUMSMessage.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

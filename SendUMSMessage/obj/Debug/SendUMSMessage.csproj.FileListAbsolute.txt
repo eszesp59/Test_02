@@ -1,0 +1,16 @@
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\SendUMSMessage.dll.config
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\SendUMSMessage.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\SendUMSMessage.pdb
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\GlobalFunctions.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\Microsoft.AspNet.SignalR.Client.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\Newtonsoft.Json.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\Owin.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\GlobalFunctions.pdb
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\Microsoft.AspNet.SignalR.Client.pdb
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\bin\Newtonsoft.Json.xml
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\obj\Debug\SendUMSMessage.csproj.AssemblyReference.cache
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\obj\Debug\SendUMSMessage.csproj.CoreCompileInputs.cache
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\obj\Debug\SendUMSM.4BF7F6D5.Up2Date
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\obj\Debug\SendUMSMessage.dll
+C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\SendUMSMessage\obj\Debug\SendUMSMessage.pdb

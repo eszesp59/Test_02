@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="e4c66cf2-d1b9-4211-aef8-ba3d603b722f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SendUMSMessage/SendUMSMessage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SendUMSMessage.disco" MetadataType="Disco" ID="a98cf048-0707-4c52-a4bc-3fb589bbadb7" SourceId="1" SourceUrl="http://localhost/SendUMSMessage/SendUMSMessage.svc?disco" />
+    <MetadataFile FileName="SendUMSMessage.xsd" MetadataType="Schema" ID="4d1a24f9-8a1f-4dfe-b8cd-8883db9a7550" SourceId="1" SourceUrl="http://localhost/SendUMSMessage/SendUMSMessage.svc?xsd=xsd2" />
+    <MetadataFile FileName="SendUMSMessage2.xsd" MetadataType="Schema" ID="51fcc8f5-1a55-4ff2-9854-57a2a8b57286" SourceId="1" SourceUrl="http://localhost/SendUMSMessage/SendUMSMessage.svc?xsd=xsd1" />
+    <MetadataFile FileName="SendUMSMessage1.xsd" MetadataType="Schema" ID="f3a98d29-838a-41c0-bca5-b5189ceee566" SourceId="1" SourceUrl="http://localhost/SendUMSMessage/SendUMSMessage.svc?xsd=xsd0" />
+    <MetadataFile FileName="SendUMSMessage.wsdl" MetadataType="Wsdl" ID="2d497d1a-ca23-4f79-be68-e007f406e062" SourceId="1" SourceUrl="http://localhost/SendUMSMessage/SendUMSMessage.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

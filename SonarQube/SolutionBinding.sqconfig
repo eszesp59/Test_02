@@ -1,0 +1,11 @@
+{
+  "ServerUri": "http://tadsonar.tad.mavinformatika.hu:9000",
+  "Organization": null,
+  "ProjectKey": "UMS_Tester:PTB-Main",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "cs-w-02-82293",
+      "ProfileTimestamp": "2018-01-30T17:56:37+01:00"
+    }
+  }
+}
