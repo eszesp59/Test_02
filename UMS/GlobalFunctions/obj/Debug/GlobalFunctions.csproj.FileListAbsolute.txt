@@ -1,8 +1,0 @@
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\bin\Debug\GlobalFunctions.dll
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\bin\Debug\GlobalFunctions.pdb
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\bin\Debug\Owin.dll
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\obj\Debug\GlobalFunctions.csproj.AssemblyReference.cache
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\obj\Debug\GlobalFunctions.csproj.CoreCompileInputs.cache
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\obj\Debug\GlobalFu.D092504B.Up2Date
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\obj\Debug\GlobalFunctions.dll
-C:\Work\IFP\PTB-Main-Dev\Src\ARCH\UMS\GlobalFunctions\obj\Debug\GlobalFunctions.pdb
