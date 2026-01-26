@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.ComponentModel;
 
 namespace RESTWcfService
 {
@@ -33,6 +34,7 @@ namespace RESTWcfService
         string stringValue = "Hello ";
 
         [DataMember]
+        [Description("Indicates whether the operation should be processed")]
         public bool BoolValue
         {
             get { return boolValue; }
@@ -40,6 +42,7 @@ namespace RESTWcfService
         }
 
         [DataMember]
+        [Description("The string value to be processed")]
         public string StringValue
         {
             get { return stringValue; }
