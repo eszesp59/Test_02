@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using SwaggerWcf.Attributes;
+using System.ComponentModel;
 
 namespace RESTWcfService
 {
@@ -15,10 +17,12 @@ namespace RESTWcfService
 
         [OperationContract]
         [WebGet(UriTemplate = "GetData/{value}", ResponseFormat = WebMessageFormat.Json)]
+        [SwaggerWcfPath("Get Data", "Retrieves data based on the input value.")]
         string GetData(int value);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "GetDataUsingDataContract", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        [SwaggerWcfPath("Get Data Using Contract", "Retrieves data using a composite type.")]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
@@ -33,6 +37,7 @@ namespace RESTWcfService
         string stringValue = "Hello ";
 
         [DataMember]
+        [Description("A boolean value used for processing logic.")]
         public bool BoolValue
         {
             get { return boolValue; }
@@ -40,6 +45,7 @@ namespace RESTWcfService
         }
 
         [DataMember]
+        [Description("A string value that will be modified.")]
         public string StringValue
         {
             get { return stringValue; }
